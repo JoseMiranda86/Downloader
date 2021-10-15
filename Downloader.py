@@ -24,3 +24,15 @@ if Option == "1":
 
     print("\n\n" + link.title + " has been successfully downloaded.\n")
     exit()
+
+#Logic for download mp3
+elif Option == "2":
+    sleep(1)
+    print("\nDownloading...")
+    video = link.streams.filter(only_audio=True)[1]
+ 
+# download the file
+    out_file = video.download(output_path = 'C:\\Users\\mivaj\\Desktop')
+   
+    mp4_file = out_file
+    mp3_file = out_file[:-4] + ".mp3"    
