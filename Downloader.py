@@ -36,3 +36,13 @@ elif Option == "2":
    
     mp4_file = out_file
     mp3_file = out_file[:-4] + ".mp3"    
+
+    audioclip = AudioFileClip(mp4_file)
+    audioclip.write_audiofile(mp3_file)
+    audioclip.close()
+
+    os.remove(out_file)
+
+    # result of success
+    print("\n\n" + link.title + " has been successfully downloaded.\n")
+    exit()
