@@ -8,7 +8,7 @@ import os
 link = YouTube(
     str(input("\n\nEnter the URL: ")))
 
-Option = input("\nPlease choose which file you want to download:\n\n1- Video     2- Audio\n\nYour choice: ")
+Option = input("\nWhich file would you like to save:\n\n1- Video (mp4)     2- Audio (mp3)\n\nSelect one: ")
 
 # Download video option
 if Option == "1":
