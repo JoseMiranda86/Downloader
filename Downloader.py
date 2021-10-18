@@ -4,6 +4,9 @@ from time import sleep
 from moviepy.editor import *
 import os
 
+#Def method to clear screen
+clear = lambda: os.system('cls')
+
 # Create variable with method of library and URL from user
 link = YouTube(
     str(input("\n\nEnter the URL: ")))
@@ -22,6 +25,7 @@ if Option == "1":
     new_file = base + '.mp4'
     os.rename(out_file, new_file)
 
+    clear()
     print("\n\n" + link.title + " has been successfully downloaded.\n")
     exit()
 
@@ -44,5 +48,6 @@ elif Option == "2":
     os.remove(out_file)
 
 # Result of success
+    clear()
     print("\n\n" + link.title + " has been successfully downloaded.\n")
     exit()
