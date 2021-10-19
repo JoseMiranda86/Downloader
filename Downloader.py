@@ -13,6 +13,8 @@ link = YouTube(
 
 Option = input("\nWhich file would you like to save:\n\n1- Video (mp4)     2- Audio (mp3)\n\nSelect one: ")
 
+# Ask user for name of new file
+print("\nWould you like to keep the original name for the new file?")
 # Download video option
 if Option == "1":
     sleep(1)
