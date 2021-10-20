@@ -13,8 +13,6 @@ link = YouTube(
 
 Option = input("\nWhich file would you like to save:\n\n1- Video (mp4)     2- Audio (mp3)\n\nSelect one: ")
 
-# Ask user for name of new file
-print("\nWould you like to keep the original name for the new file?")
 # Download video option
 if Option == "1":
     sleep(1)
@@ -40,8 +38,15 @@ elif Option == "2":
 # Download the file
     out_file = video.download(output_path = 'C:\\Users\\mivaj\\Desktop')
    
-    mp4_file = out_file
-    mp3_file = out_file[:-4] + ".mp3"    
+# Ask user for name of new file
+    ChangName = input("\nWould you like to keep the original name for the new file? Y/N\n")
+    if ChangName[0].lower() == "y":
+        mp4_file = out_file
+        mp3_file = out_file[:-4] + ".mp3"  
+    else:
+        NewName = input("\nWhat is the new name? ")
+        mp4_file = out_file
+        mp3_file = NewName + ".mp3"      
 # Converting to mp3
     audioclip = AudioFileClip(mp4_file)
     audioclip.write_audiofile(mp3_file)
@@ -51,5 +56,5 @@ elif Option == "2":
 
 # Result of success
     clear()
-    print("\n\n" + link.title + " has been successfully downloaded.\n")
+    print("\n\nThe file has been successfully downloaded.\n")
     exit()
