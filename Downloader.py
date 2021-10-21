@@ -19,14 +19,14 @@ if Option == "1":
     print("\nDownloading...")
 # Selecting video from file and saving on desktop    
     ys = link.streams.get_highest_resolution()
-    out_file = ys.download(output_path = 'C:\\Users\\mivaj\\Desktop')
+    out_file = ys.download()
 # Changing name of new file
     base, ext = os.path.splitext(out_file)
     new_file = base + '.mp4'
     os.rename(out_file, new_file)
 
     clear()
-    print("\n\n" + link.title + " has been successfully downloaded.\n")
+    print("\n\nThe file has been successfully downloaded.\n")
     exit()
 
 # Logic for download mp3
@@ -36,7 +36,7 @@ elif Option == "2":
     video = link.streams.filter(only_audio=True)[1]
  
 # Download the file
-    out_file = video.download(output_path = 'C:\\Users\\mivaj\\Desktop')
+    out_file = video.download()
    
 # Ask user for name of new file
     ChangName = input("\nWould you like to keep the original name for the new file? Y/N\n")
@@ -46,7 +46,7 @@ elif Option == "2":
     else:
         NewName = input("\nWhat is the new name? ")
         mp4_file = out_file
-        mp3_file = NewName + ".mp3"      
+        mp3_file = NewName + ".mp3"       
 # Converting to mp3
     audioclip = AudioFileClip(mp4_file)
     audioclip.write_audiofile(mp3_file)
