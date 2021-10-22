@@ -20,12 +20,19 @@ if Option == "1":
 # Selecting video from file and saving on desktop    
     ys = link.streams.get_highest_resolution()
     out_file = ys.download()
-# Changing name of new file
-    base, ext = os.path.splitext(out_file)
-    new_file = base + '.mp4'
-    os.rename(out_file, new_file)
 
-    clear()
+
+
+
+# Ask user for name of new file
+    ChangName = input("\nWould you like to keep the original name for the new file? (Y/N):  ")
+    if ChangName[0].lower() == "n":
+        NewName = input("\nWhat is the new name? ")
+        #base, ext = os.path.splitext(out_file)
+        new_file = NewName + '.mp4'
+        os.rename(out_file, new_file)    
+
+    clear() 
     print("\n\nThe file has been successfully downloaded.\n")
     exit()
 
@@ -39,7 +46,7 @@ elif Option == "2":
     out_file = video.download()
    
 # Ask user for name of new file
-    ChangName = input("\nWould you like to keep the original name for the new file? Y/N\n")
+    ChangName = input("\nWould you like to keep the original name for the new file? (Y/N):  ")
     if ChangName[0].lower() == "y":
         mp4_file = out_file
         mp3_file = out_file[:-4] + ".mp3"  
