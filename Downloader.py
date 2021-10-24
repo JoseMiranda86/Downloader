@@ -30,7 +30,7 @@ while True:
             new_file = NewName + '.mp4'
             os.rename(out_file, new_file)    
 
-        clear() 
+        #clear() 
         print("\n\nThe file has been successfully downloaded.\n")
         
 
@@ -60,7 +60,7 @@ while True:
         os.remove(out_file)
 
     # Result of success
-        clear()
+        #clear()
         print("\n\nThe file has been successfully downloaded.\n")
 
     Choice = input("\n\nWould you like to download another file? (Y//N):  ")
@@ -69,5 +69,5 @@ while True:
     else:
         break
 
-clear()                
+#clear()                
 exit()
